@@ -1,0 +1,731 @@
+<!-- Z3 v1.1 | (c) Z3 NITHIN | MIT website.org/license -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+	<style type="text/css">
+:root{--zeus-purple:#323377;--zeus-light:#d0e4f8;--red:#dc3545;--success:#28a745;--info:#17a2b8;--warning:#ffc107;--danger:#dc3545;--light:#f8f9fa;--dark:#343a40;--font-family-monospace:consolas,monospace}::-webkit-scrollbar{width:0;height:0}::-webkit-scrollbar-button{width:0;height:0}::-webkit-scrollbar-corner{background:0 0}::-webkit-scrollbar-thumb{background:0 0;border:none;border-radius:8px}::-webkit-scrollbar-track{background:0 0;border:0 #1e2125;border-radius:5px}::selection{background:var(--zeus-purple);color:#fff}::-moz-selection{background:var(--zeus-purple);color:#fff}*,::after,::before{box-sizing:border-box;scroll-behavior:smooth}html{line-height:1.15;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}html.__FR37cO43_{overflow:hidden!important}article,aside,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}body{margin:0;font-family:montserrat;font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}hr{box-sizing:content-box;height:0;overflow:visible}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}li,ol,ul{list-style:none}._iW2eEtIa{user-select:none;-webkit-user-select:none;position:fixed;top:0;left:0;height:100%;width:20px;background:0 0}._yRQ0243{display:inline-block;text-transform:uppercase;font-size:10px;font-weight:500;color:#9aadce;position:absolute;top:50%;left:4px;width:300px;margin-top:150px;text-align:center;-moz-transform:rotate(-90deg);-ms-transform:rotate(-90deg);-webkit-transform:rotate(-90deg);transform:rotate(-90deg);-moz-transform-origin:0 0;-ms-transform-origin:0 0;-webkit-transform-origin:0 0;transform-origin:0 0}._i5h67duv{text-align:center;padding:4.5em 0 2.5em 0;background-size:cover;height:100vh;min-height:35em;-webkit-user-select:none;background-attachment:fixed;background-position:center;background-repeat:no-repeat;background-size:cover}._l37tzkKr{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}._k57YsGe{color:#fff;font-size:8em;font-weight:700}._A0jRDZ53{font-size:20px;font-weight:600;color:#a6b3ef}._Y0L7TCG{position:absolute;right:0;left:0;bottom:-170px;margin:auto;width:34px;height:55px}._ckwFsIoT{width:3px;padding:10px 15px;height:35px;border:2px solid #8d98ff;border-radius:25px;opacity:.75;box-sizing:content-box}._lo34Pe{width:3px;height:10px;border-radius:25%;background-color:#fff;animation:tfJzJZD cubic-bezier(.15,.41,.69,.94) 2.2s infinite}@keyframes tfJzJZD{0%{opacity:0}10%{transform:translateY(0);opacity:1}100%{transform:translateY(15px);opacity:0}}@-webkit-keyframes tfJzJZD{0%{opacity:0}10%{transform:translateY(0);opacity:1}100%{transform:translateY(15px);opacity:0}}._qfQKrOc{margin-top:2em}._tPsmxovG{max-width:70rem}._omC82Wsp{display:inline-flex;display:-webkit-flex;display:flex}._tPsmxovG,._tPsmxovG-e73{margin:0 auto;padding:0 1rem}._HboBTHCj{font-size:2.4rem;font-weight:700;color:#323377}._elQ8pT5{font-size:16px;margin-bottom:1.2em;max-width:40em;font-weight:600;color:#73849a}._c0c7bd{margin-top:5rem}._GMlhcK{color:#414584;font-weight:600}._iJH07j{font-size:12px;font-weight:600;color:#73849a}._PA381{margin-bottom:2em}._iCo38c,._iOut48{position:relative;width:50%}._iCo38c{padding:0 0 0 30px}._bOi471{border:none;background:#394165;padding:.436rem .325rem;border-radius:4px;color:#fff;cursor:pointer;font-size:.625rem;outline:0;right:0;position:absolute;top:.25rem}._BT384>button{margin:0 0 0 8px}._RD384>ul>li{margin:0 12px 0 0}.z3-alert:not(:last-child){margin-bottom:1.5em}.z3-alert::selection{background:0 0;color:inherit}._T{margin-bottom:2em}._CP{width:50%}._PR83{padding:0 6%;background-size:cover;-webkit-user-select:none;background-attachment:fixed;background-position:center;background-repeat:no-repeat;background-size:cover}._X318PXE{padding:20px;text-align:center}a{text-decoration:none}.__FP44{text-transform:uppercase;font-family:montserrat;color:#fff;font-size:4em;font-weight:700}._x{margin:0;text-transform:uppercase;font-size:10px;font-weight:500;color:#9aadce;line-height:0}.g1{width:1em;height:1em}@media(max-width:768px){._l37tzkKr{width:90%}._Y0L7TCG{bottom:-120px}._HboBTHCj{font-size:2.2rem}._elQ8pT5{font-size:14px}._omC82Wsp{display:block!important}._iCo38c,._iOut48{position:relative;width:100%!important}._iCo38c{padding:1em 0 0 0!important}._BT384>button{margin:2px 2px!important}._CP{width:66%}._iW2eEtIa{display:none!important}._X318PXE{padding:10px}}
+/*
+
+Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmail.com>
+
+*/
+
+.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    color: #657b83;
+}
+
+.hljs-comment,
+.hljs-quote {
+    color: #93a1a1;
+}
+
+
+/* Solarized Green */
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-addition {
+    color: #859900;
+}
+
+
+/* Solarized Cyan */
+
+.hljs-number,
+.hljs-string,
+.hljs-meta .hljs-meta-string,
+.hljs-literal,
+.hljs-doctag,
+.hljs-regexp {
+    color: #2aa198;
+}
+
+
+/* Solarized Blue */
+
+.hljs-title,
+.hljs-section,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+    color: #268bd2;
+}
+
+
+/* Solarized Yellow */
+
+.hljs-attribute,
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-class .hljs-title,
+.hljs-type {
+    color: #b58900;
+}
+
+
+/* Solarized Orange */
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-subst,
+.hljs-meta,
+.hljs-meta .hljs-keyword,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-link {
+    color: #cb4b16;
+}
+
+
+/* Solarized Red */
+
+.hljs-built_in,
+.hljs-deletion {
+    color: #dc322f;
+}
+
+.hljs-formula {
+    background: #eee8d5;
+}
+
+.hljs-emphasis {
+    font-style: italic;
+}
+
+.hljs-strong {
+    font-weight: bold;
+}
+</style>
+    <link rel="stylesheet" href="../dist/z3usv1.min.css">
+	<script type="text/javascript" >
+	!function(t,e){"object"==typeof exports&&"object"==typeof module?module.exports=e():"function"==typeof define&&define.amd?define([],e):"object"==typeof exports?exports.ClipboardJS=e():t.ClipboardJS=e()}(window,function(){return function(t){var e={};function n(o){if(e[o])return e[o].exports;var r=e[o]={i:o,l:!1,exports:{}};return t[o].call(r.exports,r,r.exports,n),r.l=!0,r.exports}return n.m=t,n.c=e,n.d=function(t,e,o){n.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:o})},n.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},n.t=function(t,e){if(1&e&&(t=n(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var o=Object.create(null);if(n.r(o),Object.defineProperty(o,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)
+for(var r in t)n.d(o,r,function(e){return t[e]}.bind(null,r));return o},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=0)}([function(t,e,n){"use strict";var o="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},r=function(){function t(t,e){for(var n=0;n<e.length;n++){var o=e[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value" in o&&(o.writable=!0),Object.defineProperty(t,o.key,o)}}return function(e,n,o){return n&&t(e.prototype,n),o&&t(e,o),e}}(),i=u(n(1)),a=u(n(3)),c=u(n(4));function u(t){return t&&t.__esModule?t:{default:t}}var l=function(t){function e(t,n){!function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,e);var o=function(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}(this,(e.__proto__||Object.getPrototypeOf(e)).call(this));return o.resolveOptions(n),o.listenClick(t),o}return function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}(e,a.default),r(e,[{key:"resolveOptions",value:function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};this.action="function"==typeof t.action?t.action:this.defaultAction,this.target="function"==typeof t.target?t.target:this.defaultTarget,this.text="function"==typeof t.text?t.text:this.defaultText,this.container="object"===o(t.container)?t.container:document.body}},{key:"listenClick",value:function(t){var e=this;this.listener=(0,c.default)(t,"click",function(t){return e.onClick(t)})}},{key:"onClick",value:function(t){var e=t.delegateTarget||t.currentTarget;this.clipboardAction&&(this.clipboardAction=null),this.clipboardAction=new i.default({action:this.action(e),target:this.target(e),text:this.text(e),container:this.container,trigger:e,emitter:this})}},{key:"defaultAction",value:function(t){return s("action",t)}},{key:"defaultTarget",value:function(t){var e=s("target",t);if(e)return document.querySelector(e)}},{key:"defaultText",value:function(t){return s("text",t)}},{key:"destroy",value:function(){this.listener.destroy(),this.clipboardAction&&(this.clipboardAction.destroy(),this.clipboardAction=null)}}],[{key:"isSupported",value:function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:["copy","cut"],e="string"==typeof t?[t]:t,n=!!document.queryCommandSupported;return e.forEach(function(t){n=n&&!!document.queryCommandSupported(t)}),n}}]),e}();function s(t,e){var n="data-clipboard-"+t;if(e.hasAttribute(n))return e.getAttribute(n)}
+t.exports=l},function(t,e,n){"use strict";var o="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},r=function(){function t(t,e){for(var n=0;n<e.length;n++){var o=e[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value" in o&&(o.writable=!0),Object.defineProperty(t,o.key,o)}}return function(e,n,o){return n&&t(e.prototype,n),o&&t(e,o),e}}(),i=function(t){return t&&t.__esModule?t:{default:t}}(n(2));var a=function(){function t(e){!function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,t),this.resolveOptions(e),this.initSelection()}return r(t,[{key:"resolveOptions",value:function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};this.action=t.action,this.container=t.container,this.emitter=t.emitter,this.target=t.target,this.text=t.text,this.trigger=t.trigger,this.selectedText=""}},{key:"initSelection",value:function(){this.text?this.selectFake():this.target&&this.selectTarget()}},{key:"selectFake",value:function(){var t=this,e="rtl"==document.documentElement.getAttribute("dir");this.removeFake(),this.fakeHandlerCallback=function(){return t.removeFake()},this.fakeHandler=this.container.addEventListener("click",this.fakeHandlerCallback)||!0,this.fakeElem=document.createElement("textarea"),this.fakeElem.style.fontSize="12pt",this.fakeElem.style.border="0",this.fakeElem.style.padding="0",this.fakeElem.style.margin="0",this.fakeElem.style.position="absolute",this.fakeElem.style[e?"right":"left"]="-9999px";var n=window.pageYOffset||document.documentElement.scrollTop;this.fakeElem.style.top=n+"px",this.fakeElem.setAttribute("readonly",""),this.fakeElem.value=this.text,this.container.appendChild(this.fakeElem),this.selectedText=(0,i.default)(this.fakeElem),this.copyText()}},{key:"removeFake",value:function(){this.fakeHandler&&(this.container.removeEventListener("click",this.fakeHandlerCallback),this.fakeHandler=null,this.fakeHandlerCallback=null),this.fakeElem&&(this.container.removeChild(this.fakeElem),this.fakeElem=null)}},{key:"selectTarget",value:function(){this.selectedText=(0,i.default)(this.target),this.copyText()}},{key:"copyText",value:function(){var t=void 0;try{t=document.execCommand(this.action)}catch(e){t=!1}
+this.handleResult(t)}},{key:"handleResult",value:function(t){this.emitter.emit(t?"success":"error",{action:this.action,text:this.selectedText,trigger:this.trigger,clearSelection:this.clearSelection.bind(this)})}},{key:"clearSelection",value:function(){this.trigger&&this.trigger.focus(),window.getSelection().removeAllRanges()}},{key:"destroy",value:function(){this.removeFake()}},{key:"action",set:function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"copy";if(this._action=t,"copy"!==this._action&&"cut"!==this._action)throw new Error('Invalid "action" value, use either "copy" or "cut"')},get:function(){return this._action}},{key:"target",set:function(t){if(void 0!==t){if(!t||"object"!==(void 0===t?"undefined":o(t))||1!==t.nodeType)throw new Error('Invalid "target" value, use a valid Element');if("copy"===this.action&&t.hasAttribute("disabled"))throw new Error('Invalid "target" attribute. Please use "readonly" instead of "disabled" attribute');if("cut"===this.action&&(t.hasAttribute("readonly")||t.hasAttribute("disabled")))throw new Error('Invalid "target" attribute. You can\'t cut text from elements with "readonly" or "disabled" attributes');this._target=t}},get:function(){return this._target}}]),t}();t.exports=a},function(t,e){t.exports=function(t){var e;if("SELECT"===t.nodeName)t.focus(),e=t.value;else if("INPUT"===t.nodeName||"TEXTAREA"===t.nodeName){var n=t.hasAttribute("readonly");n||t.setAttribute("readonly",""),t.select(),t.setSelectionRange(0,t.value.length),n||t.removeAttribute("readonly"),e=t.value}else{t.hasAttribute("contenteditable")&&t.focus();var o=window.getSelection(),r=document.createRange();r.selectNodeContents(t),o.removeAllRanges(),o.addRange(r),e=o.toString()}return e}},function(t,e){function n(){}
+n.prototype={on:function(t,e,n){var o=this.e||(this.e={});return(o[t]||(o[t]=[])).push({fn:e,ctx:n}),this},once:function(t,e,n){var o=this;function r(){o.off(t,r),e.apply(n,arguments)}return r._=e,this.on(t,r,n)},emit:function(t){for(var e=[].slice.call(arguments,1),n=((this.e||(this.e={}))[t]||[]).slice(),o=0,r=n.length;o<r;o++)n[o].fn.apply(n[o].ctx,e);return this},off:function(t,e){var n=this.e||(this.e={}),o=n[t],r=[];if(o&&e)
+for(var i=0,a=o.length;i<a;i++)o[i].fn!==e&&o[i].fn._!==e&&r.push(o[i]);return r.length?n[t]=r:delete n[t],this}},t.exports=n},function(t,e,n){var o=n(5),r=n(6);t.exports=function(t,e,n){if(!t&&!e&&!n)throw new Error("Missing required arguments");if(!o.string(e))throw new TypeError("Second argument must be a String");if(!o.fn(n))throw new TypeError("Third argument must be a Function");if(o.node(t))return function(t,e,n){return t.addEventListener(e,n),{destroy:function(){t.removeEventListener(e,n)}}}(t,e,n);if(o.nodeList(t))return function(t,e,n){return Array.prototype.forEach.call(t,function(t){t.addEventListener(e,n)}),{destroy:function(){Array.prototype.forEach.call(t,function(t){t.removeEventListener(e,n)})}}}(t,e,n);if(o.string(t))return function(t,e,n){return r(document.body,t,e,n)}(t,e,n);throw new TypeError("First argument must be a String, HTMLElement, HTMLCollection, or NodeList")}},function(t,e){e.node=function(t){return void 0!==t&&t instanceof HTMLElement&&1===t.nodeType},e.nodeList=function(t){var n=Object.prototype.toString.call(t);return void 0!==t&&("[object NodeList]"===n||"[object HTMLCollection]"===n)&&"length" in t&&(0===t.length||e.node(t[0]))},e.string=function(t){return"string"==typeof t||t instanceof String},e.fn=function(t){return"[object Function]"===Object.prototype.toString.call(t)}},function(t,e,n){var o=n(7);function r(t,e,n,r,i){var a=function(t,e,n,r){return function(n){n.delegateTarget=o(n.target,e),n.delegateTarget&&r.call(t,n)}}.apply(this,arguments);return t.addEventListener(n,a,i),{destroy:function(){t.removeEventListener(n,a,i)}}}
+t.exports=function(t,e,n,o,i){return"function"==typeof t.addEventListener?r.apply(null,arguments):"function"==typeof n?r.bind(null,document).apply(null,arguments):("string"==typeof t&&(t=document.querySelectorAll(t)),Array.prototype.map.call(t,function(t){return r(t,e,n,o,i)}))}},function(t,e){var n=9;if("undefined"!=typeof Element&&!Element.prototype.matches){var o=Element.prototype;o.matches=o.matchesSelector||o.mozMatchesSelector||o.msMatchesSelector||o.oMatchesSelector||o.webkitMatchesSelector}
+t.exports=function(t,e){for(;t&&t.nodeType!==n;){if("function"==typeof t.matches&&t.matches(e))return t;t=t.parentNode}}}])})
+	</script>
+	<script type="text/javascript">
+	/*! highlight.js v9.17.1 | BSD3 License | git.io/hljslicense */
+!function(e){var n="object"==typeof window&&window||"object"==typeof self&&self;"undefined"==typeof exports||exports.nodeType?n&&(n.hljs=e({}),"function"==typeof define&&define.amd&&define([],function(){return n.hljs})):e(exports)}(function(a){var f=[],o=Object.keys,N={},g={},_=!0,n=/^(no-?highlight|plain|text)$/i,E=/\blang(?:uage)?-([\w-]+)\b/i,t=/((^(<[^>]+>|\t|)+|(?:\n)))/gm,r={case_insensitive:"cI",lexemes:"l",contains:"c",keywords:"k",subLanguage:"sL",className:"cN",begin:"b",beginKeywords:"bK",end:"e",endsWithParent:"eW",illegal:"i",excludeBegin:"eB",excludeEnd:"eE",returnBegin:"rB",returnEnd:"rE",variants:"v",IDENT_RE:"IR",UNDERSCORE_IDENT_RE:"UIR",NUMBER_RE:"NR",C_NUMBER_RE:"CNR",BINARY_NUMBER_RE:"BNR",RE_STARTERS_RE:"RSR",BACKSLASH_ESCAPE:"BE",APOS_STRING_MODE:"ASM",QUOTE_STRING_MODE:"QSM",PHRASAL_WORDS_MODE:"PWM",C_LINE_COMMENT_MODE:"CLCM",C_BLOCK_COMMENT_MODE:"CBCM",HASH_COMMENT_MODE:"HCM",NUMBER_MODE:"NM",C_NUMBER_MODE:"CNM",BINARY_NUMBER_MODE:"BNM",CSS_NUMBER_MODE:"CSSNM",REGEXP_MODE:"RM",TITLE_MODE:"TM",UNDERSCORE_TITLE_MODE:"UTM",COMMENT:"C",beginRe:"bR",endRe:"eR",illegalRe:"iR",lexemesRe:"lR",terminators:"t",terminator_end:"tE"},C="</span>",m="Could not find the language '{}', did you forget to load/include a language module?",O={classPrefix:"hljs-",tabReplace:null,useBR:!1,languages:void 0},c="of and for in not or if then".split(" ");function B(e){return e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}function d(e){return e.nodeName.toLowerCase()}function R(e){return n.test(e)}function i(e){var n,t={},r=Array.prototype.slice.call(arguments,1);for(n in e)t[n]=e[n];return r.forEach(function(e){for(n in e)t[n]=e[n]}),t}function p(e){var a=[];return function e(n,t){for(var r=n.firstChild;r;r=r.nextSibling)3===r.nodeType?t+=r.nodeValue.length:1===r.nodeType&&(a.push({event:"start",offset:t,node:r}),t=e(r,t),d(r).match(/br|hr|img|input/)||a.push({event:"stop",offset:t,node:r}));return t}(e,0),a}function v(e,n,t){var r=0,a="",i=[];function o(){return e.length&&n.length?e[0].offset!==n[0].offset?e[0].offset<n[0].offset?e:n:"start"===n[0].event?e:n:e.length?e:n}function c(e){a+="<"+d(e)+f.map.call(e.attributes,function(e){return" "+e.nodeName+'="'+B(e.value).replace(/"/g,"&quot;")+'"'}).join("")+">"}function l(e){a+="</"+d(e)+">"}function u(e){("start"===e.event?c:l)(e.node)}for(;e.length||n.length;){var s=o();if(a+=B(t.substring(r,s[0].offset)),r=s[0].offset,s===e){for(i.reverse().forEach(l);u(s.splice(0,1)[0]),(s=o())===e&&s.length&&s[0].offset===r;);i.reverse().forEach(c)}else"start"===s[0].event?i.push(s[0].node):i.pop(),u(s.splice(0,1)[0])}return a+B(t.substr(r))}function l(n){return n.v&&!n.cached_variants&&(n.cached_variants=n.v.map(function(e){return i(n,{v:null},e)})),n.cached_variants?n.cached_variants:function e(n){return!!n&&(n.eW||e(n.starts))}(n)?[i(n,{starts:n.starts?i(n.starts):null})]:Object.isFrozen(n)?[i(n)]:[n]}function u(e){if(r&&!e.langApiRestored){for(var n in e.langApiRestored=!0,r)e[n]&&(e[r[n]]=e[n]);(e.c||[]).concat(e.v||[]).forEach(u)}}function M(n,t){var i={};return"string"==typeof n?r("keyword",n):o(n).forEach(function(e){r(e,n[e])}),i;function r(a,e){t&&(e=e.toLowerCase()),e.split(" ").forEach(function(e){var n,t,r=e.split("|");i[r[0]]=[a,(n=r[0],(t=r[1])?Number(t):function(e){return-1!=c.indexOf(e.toLowerCase())}(n)?0:1)]})}}function x(r){function s(e){return e&&e.source||e}function f(e,n){return new RegExp(s(e),"m"+(r.cI?"i":"")+(n?"g":""))}function a(a){var i,e,o={},c=[],l={},t=1;function n(e,n){o[t]=e,c.push([e,n]),t+=new RegExp(n.toString()+"|").exec("").length-1+1}for(var r=0;r<a.c.length;r++){n(e=a.c[r],e.bK?"\\.?(?:"+e.b+")\\.?":e.b)}a.tE&&n("end",a.tE),a.i&&n("illegal",a.i);var u=c.map(function(e){return e[1]});return i=f(function(e,n){for(var t=/\[(?:[^\\\]]|\\.)*\]|\(\??|\\([1-9][0-9]*)|\\./,r=0,a="",i=0;i<e.length;i++){var o=r+=1,c=s(e[i]);for(0<i&&(a+=n),a+="(";0<c.length;){var l=t.exec(c);if(null==l){a+=c;break}a+=c.substring(0,l.index),c=c.substring(l.index+l[0].length),"\\"==l[0][0]&&l[1]?a+="\\"+String(Number(l[1])+o):(a+=l[0],"("==l[0]&&r++)}a+=")"}return a}(u,"|"),!0),l.lastIndex=0,l.exec=function(e){var n;if(0===c.length)return null;i.lastIndex=l.lastIndex;var t=i.exec(e);if(!t)return null;for(var r=0;r<t.length;r++)if(null!=t[r]&&null!=o[""+r]){n=o[""+r];break}return"string"==typeof n?(t.type=n,t.extra=[a.i,a.tE]):(t.type="begin",t.rule=n),t},l}if(r.c&&-1!=r.c.indexOf("self")){if(!_)throw new Error("ERR: contains `self` is not supported at the top-level of a language.  See documentation.");r.c=r.c.filter(function(e){return"self"!=e})}!function n(t,e){t.compiled||(t.compiled=!0,t.k=t.k||t.bK,t.k&&(t.k=M(t.k,r.cI)),t.lR=f(t.l||/\w+/,!0),e&&(t.bK&&(t.b="\\b("+t.bK.split(" ").join("|")+")\\b"),t.b||(t.b=/\B|\b/),t.bR=f(t.b),t.endSameAsBegin&&(t.e=t.b),t.e||t.eW||(t.e=/\B|\b/),t.e&&(t.eR=f(t.e)),t.tE=s(t.e)||"",t.eW&&e.tE&&(t.tE+=(t.e?"|":"")+e.tE)),t.i&&(t.iR=f(t.i)),null==t.relevance&&(t.relevance=1),t.c||(t.c=[]),t.c=Array.prototype.concat.apply([],t.c.map(function(e){return l("self"===e?t:e)})),t.c.forEach(function(e){n(e,t)}),t.starts&&n(t.starts,e),t.t=a(t))}(r)}function S(n,i,a,e){function c(e,n,t,r){if(!t&&""===n)return"";if(!e)return n;var a='<span class="'+(r?"":O.classPrefix);return(a+=e+'">')+n+(t?"":C)}function o(){R+=null!=E.sL?function(){var e="string"==typeof E.sL;if(e&&!N[E.sL])return B(p);var n=e?S(E.sL,p,!0,d[E.sL]):T(p,E.sL.length?E.sL:void 0);return 0<E.relevance&&(v+=n.relevance),e&&(d[E.sL]=n.top),c(n.language,n.value,!1,!0)}():function(){var e,n,t,r,a,i,o;if(!E.k)return B(p);for(r="",n=0,E.lR.lastIndex=0,t=E.lR.exec(p);t;)r+=B(p.substring(n,t.index)),a=E,i=t,o=g.cI?i[0].toLowerCase():i[0],(e=a.k.hasOwnProperty(o)&&a.k[o])?(v+=e[1],r+=c(e[0],B(t[0]))):r+=B(t[0]),n=E.lR.lastIndex,t=E.lR.exec(p);return r+B(p.substr(n))}(),p=""}function l(e){R+=e.cN?c(e.cN,"",!0):"",E=Object.create(e,{parent:{value:E}})}function u(e){var n=e[0],t=e.rule;return t&&t.endSameAsBegin&&(t.eR=new RegExp(n.replace(/[-\/\\^$*+?.()|[\]{}]/g,"\\$&"),"m")),t.skip?p+=n:(t.eB&&(p+=n),o(),t.rB||t.eB||(p=n)),l(t),t.rB?0:n.length}function s(e){var n=e[0],t=i.substr(e.index),r=function e(n,t){if(r=n.eR,a=t,(i=r&&r.exec(a))&&0===i.index){for(;n.endsParent&&n.parent;)n=n.parent;return n}var r,a,i;if(n.eW)return e(n.parent,t)}(E,t);if(r){var a=E;for(a.skip?p+=n:(a.rE||a.eE||(p+=n),o(),a.eE&&(p=n));E.cN&&(R+=C),E.skip||E.sL||(v+=E.relevance),(E=E.parent)!==r.parent;);return r.starts&&(r.endSameAsBegin&&(r.starts.eR=r.eR),l(r.starts)),a.rE?0:n.length}}var f={};function t(e,n){var t=n&&n[0];if(p+=e,null==t)return o(),0;if("begin"==f.type&&"end"==n.type&&f.index==n.index&&""===t)return p+=i.slice(n.index,n.index+1),1;if("begin"===(f=n).type)return u(n);if("illegal"===n.type&&!a)throw new Error('Illegal lexeme "'+t+'" for mode "'+(E.cN||"<unnamed>")+'"');if("end"===n.type){var r=s(n);if(null!=r)return r}return p+=t,t.length}var g=D(n);if(!g)throw console.error(m.replace("{}",n)),new Error('Unknown language: "'+n+'"');x(g);var r,E=e||g,d={},R="";for(r=E;r!==g;r=r.parent)r.cN&&(R=c(r.cN,"",!0)+R);var p="",v=0;try{for(var M,b,h=0;E.t.lastIndex=h,M=E.t.exec(i);)b=t(i.substring(h,M.index),M),h=M.index+b;for(t(i.substr(h)),r=E;r.parent;r=r.parent)r.cN&&(R+=C);return{relevance:v,value:R,i:!1,language:n,top:E}}catch(e){if(e.message&&-1!==e.message.indexOf("Illegal"))return{i:!0,relevance:0,value:B(i)};if(_)return{relevance:0,value:B(i),language:n,top:E,errorRaised:e};throw e}}function T(t,e){e=e||O.languages||o(N);var r={relevance:0,value:B(t)},a=r;return e.filter(D).filter(L).forEach(function(e){var n=S(e,t,!1);n.language=e,n.relevance>a.relevance&&(a=n),n.relevance>r.relevance&&(a=r,r=n)}),a.language&&(r.second_best=a),r}function b(e){return O.tabReplace||O.useBR?e.replace(t,function(e,n){return O.useBR&&"\n"===e?"<br>":O.tabReplace?n.replace(/\t/g,O.tabReplace):""}):e}function s(e){var n,t,r,a,i,o,c,l,u,s,f=function(e){var n,t,r,a,i=e.className+" ";if(i+=e.parentNode?e.parentNode.className:"",t=E.exec(i)){var o=D(t[1]);return o||(console.warn(m.replace("{}",t[1])),console.warn("Falling back to no-highlight mode for this block.",e)),o?t[1]:"no-highlight"}for(n=0,r=(i=i.split(/\s+/)).length;n<r;n++)if(R(a=i[n])||D(a))return a}(e);R(f)||(O.useBR?(n=document.createElement("div")).innerHTML=e.innerHTML.replace(/\n/g,"").replace(/<br[ \/]*>/g,"\n"):n=e,i=n.textContent,r=f?S(f,i,!0):T(i),(t=p(n)).length&&((a=document.createElement("div")).innerHTML=r.value,r.value=v(t,p(a),i)),r.value=b(r.value),e.innerHTML=r.value,e.className=(o=e.className,c=f,l=r.language,u=c?g[c]:l,s=[o.trim()],o.match(/\bhljs\b/)||s.push("hljs"),-1===o.indexOf(u)&&s.push(u),s.join(" ").trim()),e.result={language:r.language,re:r.relevance},r.second_best&&(e.second_best={language:r.second_best.language,re:r.second_best.relevance}))}function h(){if(!h.called){h.called=!0;var e=document.querySelectorAll("pre code");f.forEach.call(e,s)}}var w={disableAutodetect:!0};function D(e){return e=(e||"").toLowerCase(),N[e]||N[g[e]]}function L(e){var n=D(e);return n&&!n.disableAutodetect}return a.highlight=S,a.highlightAuto=T,a.fixMarkup=b,a.highlightBlock=s,a.configure=function(e){O=i(O,e)},a.initHighlighting=h,a.initHighlightingOnLoad=function(){window.addEventListener("DOMContentLoaded",h,!1),window.addEventListener("load",h,!1)},a.registerLanguage=function(n,e){var t;try{t=e(a)}catch(e){if(console.error("Language definition for '{}' could not be registered.".replace("{}",n)),!_)throw e;console.error(e),t=w}u(N[n]=t),t.rawDefinition=e.bind(null,a),t.aliases&&t.aliases.forEach(function(e){g[e]=n})},a.listLanguages=function(){return o(N)},a.getLanguage=D,a.requireLanguage=function(e){var n=D(e);if(n)return n;throw new Error("The '{}' language is required, but not loaded.".replace("{}",e))},a.autoDetection=L,a.inherit=i,a.debugMode=function(){_=!1},a.IR=a.IDENT_RE="[a-zA-Z]\\w*",a.UIR=a.UNDERSCORE_IDENT_RE="[a-zA-Z_]\\w*",a.NR=a.NUMBER_RE="\\b\\d+(\\.\\d+)?",a.CNR=a.C_NUMBER_RE="(-?)(\\b0[xX][a-fA-F0-9]+|(\\b\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)",a.BNR=a.BINARY_NUMBER_RE="\\b(0b[01]+)",a.RSR=a.RE_STARTERS_RE="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|-|-=|/=|/|:|;|<<|<<=|<=|<|===|==|=|>>>=|>>=|>=|>>>|>>|>|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~",a.BE=a.BACKSLASH_ESCAPE={b:"\\\\[\\s\\S]",relevance:0},a.ASM=a.APOS_STRING_MODE={cN:"string",b:"'",e:"'",i:"\\n",c:[a.BE]},a.QSM=a.QUOTE_STRING_MODE={cN:"string",b:'"',e:'"',i:"\\n",c:[a.BE]},a.PWM=a.PHRASAL_WORDS_MODE={b:/\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b/},a.C=a.COMMENT=function(e,n,t){var r=a.inherit({cN:"comment",b:e,e:n,c:[]},t||{});return r.c.push(a.PWM),r.c.push({cN:"doctag",b:"(?:TODO|FIXME|NOTE|BUG|XXX):",relevance:0}),r},a.CLCM=a.C_LINE_COMMENT_MODE=a.C("//","$"),a.CBCM=a.C_BLOCK_COMMENT_MODE=a.C("/\\*","\\*/"),a.HCM=a.HASH_COMMENT_MODE=a.C("#","$"),a.NM=a.NUMBER_MODE={cN:"number",b:a.NR,relevance:0},a.CNM=a.C_NUMBER_MODE={cN:"number",b:a.CNR,relevance:0},a.BNM=a.BINARY_NUMBER_MODE={cN:"number",b:a.BNR,relevance:0},a.CSSNM=a.CSS_NUMBER_MODE={cN:"number",b:a.NR+"(%|em|ex|ch|rem|vw|vh|vmin|vmax|cm|mm|in|pt|pc|px|deg|grad|rad|turn|s|ms|Hz|kHz|dpi|dpcm|dppx)?",relevance:0},a.RM=a.REGEXP_MODE={cN:"regexp",b:/\//,e:/\/[gimuy]*/,i:/\n/,c:[a.BE,{b:/\[/,e:/\]/,relevance:0,c:[a.BE]}]},a.TM=a.TITLE_MODE={cN:"title",b:a.IR,relevance:0},a.UTM=a.UNDERSCORE_TITLE_MODE={cN:"title",b:a.UIR,relevance:0},a.METHOD_GUARD={b:"\\.\\s*"+a.UIR,relevance:0},[a.BE,a.ASM,a.QSM,a.PWM,a.C,a.CLCM,a.CBCM,a.HCM,a.NM,a.CNM,a.BNM,a.CSSNM,a.RM,a.TM,a.UTM,a.METHOD_GUARD].forEach(function(e){!function n(t){Object.freeze(t);var r="function"==typeof t;Object.getOwnPropertyNames(t).forEach(function(e){!t.hasOwnProperty(e)||null===t[e]||"object"!=typeof t[e]&&"function"!=typeof t[e]||r&&("caller"===e||"callee"===e||"arguments"===e)||Object.isFrozen(t[e])||n(t[e])});return t}(e)}),a});hljs.registerLanguage("xml",function(e){var c={cN:"symbol",b:"&[a-z]+;|&#[0-9]+;|&#x[a-f0-9]+;"},s={b:"\\s",c:[{cN:"meta-keyword",b:"#?[a-z_][a-z1-9_-]+",i:"\\n"}]},a=e.inherit(s,{b:"\\(",e:"\\)"}),t=e.inherit(e.ASM,{cN:"meta-string"}),l=e.inherit(e.QSM,{cN:"meta-string"}),r={eW:!0,i:/</,relevance:0,c:[{cN:"attr",b:"[A-Za-z0-9\\._:-]+",relevance:0},{b:/=\s*/,relevance:0,c:[{cN:"string",endsParent:!0,v:[{b:/"/,e:/"/,c:[c]},{b:/'/,e:/'/,c:[c]},{b:/[^\s"'=<>`]+/}]}]}]};return{aliases:["html","xhtml","rss","atom","xjb","xsd","xsl","plist","wsf","svg"],cI:!0,c:[{cN:"meta",b:"<![a-z]",e:">",relevance:10,c:[s,l,t,a,{b:"\\[",e:"\\]",c:[{cN:"meta",b:"<![a-z]",e:">",c:[s,a,l,t]}]}]},e.C("\x3c!--","--\x3e",{relevance:10}),{b:"<\\!\\[CDATA\\[",e:"\\]\\]>",relevance:10},c,{cN:"meta",b:/<\?xml/,e:/\?>/,relevance:10},{b:/<\?(php)?/,e:/\?>/,sL:"php",c:[{b:"/\\*",e:"\\*/",skip:!0},{b:'b"',e:'"',skip:!0},{b:"b'",e:"'",skip:!0},e.inherit(e.ASM,{i:null,cN:null,c:null,skip:!0}),e.inherit(e.QSM,{i:null,cN:null,c:null,skip:!0})]},{cN:"tag",b:"<style(?=\\s|>)",e:">",k:{name:"style"},c:[r],starts:{e:"</style>",rE:!0,sL:["css","xml"]}},{cN:"tag",b:"<script(?=\\s|>)",e:">",k:{name:"script"},c:[r],starts:{e:"<\/script>",rE:!0,sL:["actionscript","javascript","handlebars","xml"]}},{cN:"tag",b:"</?",e:"/?>",c:[{cN:"name",b:/[^\/><\s]+/,relevance:0},r]}]}});hljs.registerLanguage("css",function(e){var c={b:/(?:[A-Z\_\.\-]+|--[a-zA-Z0-9_-]+)\s*:/,rB:!0,e:";",eW:!0,c:[{cN:"attribute",b:/\S/,e:":",eE:!0,starts:{eW:!0,eE:!0,c:[{b:/[\w-]+\(/,rB:!0,c:[{cN:"built_in",b:/[\w-]+/},{b:/\(/,e:/\)/,c:[e.ASM,e.QSM,e.CSSNM]}]},e.CSSNM,e.QSM,e.ASM,e.CBCM,{cN:"number",b:"#[0-9A-Fa-f]+"},{cN:"meta",b:"!important"}]}}]};return{cI:!0,i:/[=\/|'\$]/,c:[e.CBCM,{cN:"selector-id",b:/#[A-Za-z0-9_-]+/},{cN:"selector-class",b:/\.[A-Za-z0-9_-]+/},{cN:"selector-attr",b:/\[/,e:/\]/,i:"$",c:[e.ASM,e.QSM]},{cN:"selector-pseudo",b:/:(:)?[a-zA-Z0-9\_\-\+\(\)"'.]+/},{b:"@(page|font-face)",l:"@[a-z-]+",k:"@page @font-face"},{b:"@",e:"[{;]",i:/:/,rB:!0,c:[{cN:"keyword",b:/@\-?\w[\w]*(\-\w+)*/},{b:/\s/,eW:!0,eE:!0,relevance:0,k:"and or not only",c:[{b:/[a-z-]+:/,cN:"attribute"},e.ASM,e.QSM,e.CSSNM]}]},{cN:"selector-tag",b:"[a-zA-Z-][a-zA-Z0-9_-]*",relevance:0},{b:"{",e:"}",i:/\S/,c:[e.CBCM,c]}]}});
+	</script>
+    <script type="text/javascript">
+        hljs.initHighlightingOnLoad();
+    </script>
+    <title>Getting Started Z3</title>
+</head>
+
+<body class="z3us">
+    <div class="_qfQKrOc">
+        <div class="_tPsmxovG">
+            <h1 class="_HboBTHCj">UI Components</h1>
+            <p class="_elQ8pT5">Z3 CSS provides you with classes to use which allow you to quickly construct the UI with ease everything in one place. For now it supports limited number of components such as input fields,menu,cards and so on.</p>
+            <!-- Here's where things get intresting for you to use :) -->
+            <div class="_c0c7bd">
+
+                <div class="_PA381">
+                    <div class="_Flo487">
+                        <h2 class="_GMlhcK">Getting Started</h2>
+                        <p class="_iJH07j">Download the framework and embed the css file in your pages! It's that easy.</p>
+                    </div>
+                    <div class="_iOut48">
+                        <div class="_BT384">
+                            <a href="../dist/z3.zip">
+                                <button class="z3-btn z3btn-primary">Download</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="_iCo38c" style="width:100%!important;padding: 0 0 0 0!important;">
+                        <button class="btn _bOi471 _P37BTO3" data-clipboard-target="#codeLinkRel">Copy</button>
+                        <pre><code id="codeLinkRel"class="html"style="text-align:center!important;">&lt;link rel="stylesheet" type="text/css" href="path_to_z3.min.css_file"&gt;</code></pre>
+                    </div>
+                </div>
+
+                <div class="_PA381">
+                    <div class="_Flo487">
+                        <h2 class="_GMlhcK">Form Controls</h2>
+                        <p class="_iJH07j">All basic form controls, handcrafted for you.</p>
+                    </div>
+                    <div class="_omC82Wsp">
+                        <div class="_iOut48">
+                            <div class="z3-field">
+                                <label class="z3-label">Name</label>
+                                <div class="z3-control">
+                                    <input type="text" class="z3-input" placeholder="Type anything you want">
+                                </div>
+                            </div>
+
+                            <div class="z3-field">
+                                <label class="z3-label">Valid Input</label>
+                                <div class="z3-control">
+                                    <input type="text" class="z3-input z3-success" placeholder="A proper spelling goes here" value="Mississippi">
+                                    <p class="z3-message z3-success">Woho this is valid.</p>
+                                </div>
+                            </div>
+
+                            <div class="z3-field">
+                                <label class="z3-label">Invalid Input</label>
+                                <div class="z3-control">
+                                    <input type="text" class="z3-input z3-danger" placeholder="A proper spelling goes here" value="Missisemicrippi">
+                                    <p class="z3-message z3-danger">Something's not right here</p>
+                                </div>
+                            </div>
+                            <div class="z3-field">
+                                <label class="z3-label">Number</label>
+                                <div class="z3-control">
+                                    <select class="z3-select">
+                                    <option value="1">Select Something</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="z3-field">
+                                <label class="z3-label">Number</label>
+                                <div class="z3-control">
+                                    <textarea class="z3-textarea" placeholder="What's it about?"></textarea>
+                                </div>
+                            </div>
+                            <div class="z3-field">
+                                <div class="z3-control">
+                                    <button class="z3-btn z3btn-primary">Submit</button>
+                                    <button class="z3-btn z3btn-light">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="_iCo38c">
+                            <script>
+                                new ClipboardJS('.btn');
+                            </script>
+                            <button class="btn _bOi471 _P37BTO3" data-clipboard-target="#codeForms">Copy</button>
+                            <pre><code id="codeForms"class="html">&lt;div class="z3-field"&gt;
+    &lt;label class="z3-label"&gt;Name&lt;/label&gt;
+    &lt;div class="z3-control"&gt;
+        &lt;input type="text" class="z3-input" placeholder="Type anything you want"&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="z3-field"&gt;
+    &lt;label class="z3-label"&gt;Valid Input&lt;/label&gt;
+    &lt;div class="z3-control"&gt;
+        &lt;input type="text" class="z3-input z3-success" placeholder="A proper spelling goes here" value="Mississippi"&gt;
+        &lt;p class="z3-message z3-success"&gt;Woho this is valid.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="z3-field"&gt;
+    &lt;label class="z3-label"&gt;Invalid Input&lt;/label&gt;
+    &lt;div class="z3-control"&gt;
+        &lt;input type="text" class="z3-input z3-danger" placeholder="A proper spelling goes here" value="Missisemicrippi"&gt;
+        &lt;p class="z3-message z3-danger"&gt;Something's not right here&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="z3-field"&gt;
+    &lt;label class="z3-label"&gt;Number&lt;/label&gt;
+    &lt;div class="z3-control"&gt;
+        &lt;select class="z3-select"&gt;
+            &lt;option value="1"&gt;Select Something&lt;/option&gt;
+            &lt;option value="1"&gt;One&lt;/option&gt;
+            &lt;option value="2"&gt;Two&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="z3-field"&gt;
+    &lt;label class="z3-label"&gt;Number&lt;/label&gt;
+    &lt;div class="z3-control"&gt;
+        &lt;textarea class="z3-textarea" placeholder="What's it about?"&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="z3-field"&gt;
+    &lt;div class="z3-control"&gt;
+        &lt;button class="z3-btn z3btn-primary"&gt;Submit&lt;/button&gt;
+        &lt;button class="z3-btn z3btn-light"&gt;Cancel&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="_PA381">
+                    <div class="_Flo487">
+                        <h2 class="_GMlhcK">Radios & Checkboxes</h2>
+                        <p class="_iJH07j">Radios</p>
+                    </div>
+                    <div class="_omC82Wsp">
+                        <div class="_iOut48">
+                            <div class="_RD384">
+                                <ul style="padding:0!important;display:flex!important;">
+                                    <li>
+                                        <input type="radio" id="r1" name="radio" checked>
+                                        <label for="r1">
+                                        I'm Checked
+                                    </label></li>
+                                    <li>
+                                        <input type="radio" id="r2" name="radio">
+                                        <label for="r2">
+                                            Check Me
+                                        </label>
+                                    </li>
+                                </ul>
+                                <div class="z3-alert alert-danger">
+                                    Make sure that <strong>input id</strong> and the <strong>label for</strong> attr match accordingly and must be unique.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="_iCo38c">
+                            <button class="btn _bOi471 _P37BTO3" data-clipboard-target="#codeRadio">Copy</button>
+                            <pre><code id="codeRadio"class="html">&lt;input type="radio" id="r1" name="radio" checked&gt;
+&lt;label for="r1"&gt;I'm Checked&lt;/label&gt;
+
+&lt;input type="radio" id="r2" name="radio"&gt;
+&lt;label for="r2"&gt;Check Me&lt;/label&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="_PA381">
+                    <div class="_Flo487">
+                        <p class="_iJH07j">Checkboxes</p>
+                    </div>
+                    <div class="_omC82Wsp">
+                        <div class="_iOut48">
+                            <div class="_RD384">
+                                <ul style="padding:0!important;display:flex!important;">
+                                    <li>
+                                        <div class="z3checkbox">
+                                            <input id="c1" type="checkbox" value="1" name="check" checked>
+                                            <label for="c1"></label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="z3checkbox">
+                                            <input id="c2" type="checkbox" value="2" name="check">
+                                            <label for="c2"></label>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="z3-alert alert-danger">
+                                    Make sure that <strong>input id</strong> and the <strong>label for</strong> attr match accordingly and must be unique.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="_iCo38c">
+                            <button class="btn _bOi471 _P37BTO3" data-clipboard-target="#codeCheckbox">Copy</button>
+                            <pre><code id="codeCheckbox"class="html">&lt;div class="z3checkbox"&gt;
+    &lt;input id="c1" type="checkbox" value="1" name="check" checked&gt;
+    &lt;label for="c1"&gt;&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="z3checkbox"&gt;
+    &lt;input id="c2" type="checkbox" value="2" name="check"&gt;
+    &lt;label for="c2"&gt;&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="_PA381">
+                    <div class="_Flo487">
+                        <p class="_iJH07j">Loaders & Bars</p>
+                    </div>
+                    <div class="_omC82Wsp">
+                        <div class="_iOut48">
+                            <div class="_T">
+                                <p class="_iJH07j">Small Progress Bar</p>
+                                <div class="z3-progress z3progress-small"></div>
+                            </div>
+                            <div class="_T">
+                                <p class="_iJH07j">Medium Progress Bar with Custom Background</p>
+                                <div class="z3-progress z3progress-medium progress-purple"></div>
+                            </div>
+                            <div class="_T">
+                                <p class="_iJH07j">Large Progress Bar with Custom Background</p>
+                                <div class="z3-progress z3progress-large progress-red"></div>
+                            </div>
+                            <div class="_T">
+                                <p class="_iJH07j">Large Progress Bar with Custom Gradient</p>
+                                <div class="z3-progress z3progress-large progress-gradient"></div>
+                            </div>
+                            <div class="_T">
+                                <p class="_iJH07j">Spinner</p>
+                                <div class="z3-spinner"></div>
+                            </div>
+                        </div>
+                        <div class="_iCo38c">
+                            <button class="btn _bOi471 _P37BTO3" data-clipboard-target="#codeProgress">Copy</button>
+                            <pre><code id="codeProgress"class="html">&lt;div class="z3-progress z3progress-small"&gt;&lt;/div&gt;
+
+&lt;div class="z3-progress z3progress-medium progress-purple"&gt;&lt;/div&gt;
+
+&lt;div class="z3-progress z3progress-large progress-red"&gt;&lt;/div&gt;
+
+&lt;div class="z3-progress z3progress-large progress-gradient"&gt;&lt;/div&gt;
+
+&lt;!-- Feel free to add your own custom colors to the progress bars by
+specifying a class in your CSS like
+.your-class-name::before{
+    background:color;
+} 
+Make sure to include your class in HTML as well
+&lt;div class="z3-progress your-class-name-here"&gt;
+--&gt;
+
+&lt;div class="z3-spinner"&gt;&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="_PA381">
+                    <div class="_Flo487">
+                        <h2 class="_GMlhcK">Buttons</h2>
+                        <p class="_iJH07j">Classic buttons in different styles,colors and states.</p>
+                    </div>
+                    <div class="_omC82Wsp">
+                        <div class="_iOut48">
+                            <div class="_BT384">
+                                <button class="z3-btn z3btn-light">Light</button>
+                                <button class="z3-btn z3btn-dark">Dark</button>
+                                <button class="z3-btn z3btn-primary">Primary</button>
+                            </div>
+                        </div>
+                        <div class="_iCo38c">
+                            <button class="btn _bOi471 _P37BTO3" data-clipboard-target="#codeButtons">Copy</button>
+                            <pre><code id="codeButtons"class="html">&lt;button class="z3-btn z3btn-light"&gt;Light&lt;/button&gt;
+&lt;button class="z3-btn z3btn-dark"&gt;Dark&lt;/button&gt;
+&lt;button class="z3-btn z3btn-primary"&gt;Primary&lt;/button&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="_PA381">
+                    <div class="_omC82Wsp">
+                        <div class="_iOut48">
+                            <div class="_BT384">
+                                <button class="z3-btn z3btn-info">Info</button>
+                                <button class="z3-btn z3btn-success">Success</button>
+                                <button class="z3-btn z3btn-warning">Warning</button>
+                                <button class="z3-btn z3btn-danger">Error</button>
+                            </div>
+                        </div>
+                        <div class="_iCo38c">
+                            <button class="btn _bOi471 _P37BTO3" data-clipboard-target="#codeBtnStates">Copy</button>
+                            <pre><code id="codeBtnStates"class="html">&lt;button class="z3-btn z3btn-info"&gt;Info&lt;/button&gt;
+&lt;button class="z3-btn z3btn-success"&gt;Success&lt;/button&gt;
+&lt;button class="z3-btn z3btn-warning"&gt;Warning&lt;/button&gt;
+&lt;button class="z3-btn z3btn-danger"&gt;Error&lt;/button&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="_PA381">
+                    <div class="_Flo487">
+                        <h2 class="_GMlhcK">Search</h2>
+                        <p class="_iJH07j">Simple search box to make it all happen</p>
+                    </div>
+                    <div class="_omC82Wsp">
+                        <div class="_iOut48">
+                            <div class="z3-control z3icon-left">
+                                <input type="text" class="z3-input" placeholder="Search here">
+                                <span class="z3-icon icon-left">
+                                    <svg class="z3-svg" aria-hidden="true" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                        <path fill="#394165c2" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="_iCo38c">
+                            <button class="btn _bOi471 _P37BTO3" data-clipboard-target="#codeSearch">Copy</button>
+                            <pre><code id="codeSearch"class="html">&lt;div class="z3-control z3icon-left"&gt;
+    &lt;input type="text" class="z3-input" placeholder="Search here"&gt;
+    &lt;span class="z3-icon icon-left"&gt;
+        &lt;svg class="z3-svg" aria-hidden="true" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""&gt;
+            &lt;path fill="#394165c2" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"&gt;&lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/span&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="_PA381">
+                    <div class="_Flo487">
+                        <h2 class="_GMlhcK">Menu</h2>
+                        <p class="_iJH07j">Display a custom menu for navigating across</p>
+                    </div>
+                    <div class="_omC82Wsp">
+                        <div class="_iOut48">
+                            <aside class="z3-menu _CP">
+                                <p class="z3menu-heading">User</p>
+                                <ul class="z3menu-list">
+                                    <li>
+                                        <a>Dashboard</a>
+                                    </li>
+                                    <li>
+                                        <a>Profile</a>
+                                    </li>
+                                </ul>
+                                <p class="z3menu-heading">Account</p>
+                                <ul class="z3menu-list">
+                                    <li>
+                                        <a class="z3menu-active">Password</a>
+                                        <ul>
+                                            <li>
+                                                <a>Security</a>
+                                            </li>
+                                            <li>
+                                                <a>Change</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a>Status</a>
+                                    </li>
+                                </ul>
+                            </aside>
+                        </div>
+                        <div class="_iCo38c">
+                            <button class="btn _bOi471 _P37BTO3" data-clipboard-target="#codeNav">Copy</button>
+                            <pre><code id="codeNav"class="html">&lt;aside class="z3-menu"&gt;
+    &lt;p class="z3menu-heading"&gt;User&lt;/p&gt;
+    &lt;ul class="z3menu-list"&gt;
+        &lt;li&gt;
+            &lt;a&gt;Dashboard&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a&gt;Profile&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p class="z3menu-heading"&gt;Account&lt;/p&gt;
+    &lt;ul class="z3menu-list"&gt;
+        &lt;li&gt;
+            &lt;a class="z3menu-active"&gt;Password&lt;/a&gt;
+            &lt;ul&gt;
+                &lt;li&gt;
+                    &lt;a&gt;Security&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;a&gt;Change&lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a&gt;Status&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/aside&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="_PA381">
+                    <div class="_Flo487">
+                        <h2 class="_GMlhcK">Alerts</h2>
+                        <p class="_iJH07j">Classic notification blocks to alert them.</p>
+                    </div>
+                    <div class="_omC82Wsp">
+                        <div class="_iOut48">
+                            <div class="z3-alert alert-primary">
+                                Well now this would be a primary alert.
+                            </div>
+                            <div class="z3-alert alert-info">
+                                And this is an alert to show some info.
+                            </div>
+                            <div class="z3-alert alert-success">
+                                Well done! Success alert here.
+                            </div>
+                            <div class="z3-alert alert-warning">
+                                Woops! This is a warning alert.
+                            </div>
+                            <div class="z3-alert alert-danger">
+                                Erroorrrrr! You know it.
+                            </div>
+                        </div>
+                        <div class="_iCo38c">
+                            <button class="btn _bOi471 _P37BTO3" data-clipboard-target="#alertCode">Copy</button>
+                            <pre><code id="alertCode"class="html">&lt;div class="z3-alert alert-primary"&gt;
+Well now this would be a primary alert.
+&lt;/div&gt;
+&lt;div class="z3-alert alert-info"&gt;
+And this is an alert to show some info.
+&lt;/div&gt;
+&lt;div class="z3-alert alert-success"&gt;
+Well done! Success alert here.
+&lt;/div&gt;
+&lt;div class="z3-alert alert-warning"&gt;
+Woops! This is a warning alert.
+&lt;/div&gt;
+&lt;div class="z3-alert alert-danger"&gt;
+Erroorrrrr! You know it.
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="_PA381">
+                    <div class="_Flo487">
+                        <h2 class="_GMlhcK">Modals</h2>
+                        <p class="_iJH07j">Sleek popups to confirm an action</p>
+                    </div>
+                    <div class="_omC82Wsp">
+                        <div class="_iOut48">
+                            <button id="launchModal" class="z3-btn z3btn-dark">Launch Modal</button>
+
+                            <div class="z3-modal">
+                                <div class="z3modal-background"></div>
+                                <div class="z3modal-inner">
+                                    <div class="z3modal-head">
+                                        <p class="z3modal-title">Are You Sure?</p>
+                                        <button id="killModal" class="z3modal-close"></button>
+                                    </div>
+                                    <div class="z3modal-body">
+                                        <div class="z3modal-content">
+                                            <h2>Dear User,</h2>
+                                            <p>There's nothing much to be worried about if your closing this Modal Window.</p>
+                                        </div>
+                                    </div>
+                                    <div class="z3modal-foot">
+                                        <button id="what" class="z3-btn z3btn-success">WHAT?</button>
+                                        <button id="close" class="z3-btn z3btn-light">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="z3-alert alert-danger" style="margin:2em 0 0 0!important;">
+                                JavaScript is not included in the snippet. You will need to toggle the class by yourself.
+                            </div>
+                        </div>
+                        <div class="_iCo38c">
+                            <button class="btn _bOi471 _P37BTO3" data-clipboard-target="#codeModal">Copy</button>
+                            <pre><code id="codeModal"class="html">&lt;!-- Class to Toggle would be <strong>z3modal-active</strong> --&gt;
+&lt;div class="z3-modal"&gt;
+    &lt;div class="z3modal-background"&gt;&lt;/div&gt;
+    &lt;div class="z3modal-inner"&gt;
+        &lt;div class="z3modal-head"&gt;
+            &lt;p class="z3modal-title"&gt;Are You Sure?&lt;/p&gt;
+            &lt;button id="killModal" class="z3modal-close"&gt;&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class="z3modal-body"&gt;
+            &lt;div class="z3modal-content"&gt;
+                &lt;h2&gt;Dear User,&lt;/h2&gt;
+                &lt;p&gt;There's nothing much to be worried about if your closing this Modal Window.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="z3modal-foot"&gt;
+            &lt;button id="what" class="z3-btn z3btn-success"&gt;WHAT?&lt;/button&gt;
+            &lt;button id="close" class="z3-btn z3btn-light"&gt;Cancel&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="_PA381">
+                    <div class="_Flo487">
+                        <h2 class="_GMlhcK">Cards</h2>
+                        <p class="_iJH07j">Place everything inside here</p>
+                    </div>
+                    <div class="_omC82Wsp">
+                        <div class="_iOut48">
+                            <div class="z3-card">
+                                <div class="z3card-head">
+                                    <img src="./img/KpFB5LH3kYWnOu.jpg">
+                                </div>
+                                <div class="z3card-body">
+                                    <p class="z3card-label">FURNITURE</p>
+                                    <h3 class="z3card-heading">The Chair</h3>
+                                    <p class="z3card-desc">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum modi autem necessitatibus atque porro facere consequuntur, mollitia omnis nihil.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="_iCo38c">
+                            <button class="btn _bOi471 _P37BTO3" data-clipboard-target="#codeCard">Copy</button>
+                            <pre><code id="codeCard"class="html">&lt;div class="z3-card"&gt;
+    &lt;div class="z3card-head"&gt;
+        &lt;img src="path_to_your_image"&gt;
+    &lt;/div&gt;
+    &lt;div class="z3card-body"&gt;
+        &lt;p class="z3card-label"&gt;FURNITURE&lt;/p&gt;
+        &lt;h3 class="z3card-heading"&gt;The Chair&lt;/h3&gt;
+        &lt;p class="z3card-desc"&gt;
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum modi autem necessitatibus atque porro facere consequuntur, mollitia omnis nihil.
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="_PA381">
+                    <div class="_Flo487">
+                        <h2 class="_GMlhcK">SlideShow</h2>
+                        <p class="_iJH07j">Pure CSS slideshow with no JavaScript</p>
+                    </div>
+                    <div class="_omC82Wsp">
+                        <div class="_iOut48">
+                            <div class="z3-slider">
+                                <div class="z3slider-slide">
+                                    <img src="./img/cqS5suPmO4fJ7u.jpg" alt="IMG">
+                                </div>
+                                <div class="z3slider-slide">
+                                    <img src="./img/wy5UUQpRHh1fYq.jpg" alt="IMG">
+                                </div>
+                                <div class="z3slider-slide">
+                                    <img src="./img/3YMCOHQIzpA5Fj.jpg" alt="IMG">
+                                </div>
+                                <div class="z3slider-slide">
+                                    <img src="./img/L2Whk2dyxKnMiV.jpg" alt="IMG">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="_iCo38c">
+                            <button class="btn _bOi471 _P37BTO3" data-clipboard-target="#codeSlider">Copy</button>
+                            <pre><code id="codeSlider"class="html">&lt;div class="z3-slider"&gt;
+    &lt;div class="z3slider-slide"&gt;
+        &lt;img src="path_to_your_image" alt="IMG"&gt;
+    &lt;/div&gt;
+    &lt;div class="z3slider-slide"&gt;
+        &lt;img src="path_to_your_image" alt="IMG"&gt;
+    &lt;/div&gt;
+    &lt;div class="z3slider-slide"&gt;
+        &lt;img src="path_to_your_image" alt="IMG"&gt;
+    &lt;/div&gt;
+    &lt;div class="z3slider-slide"&gt;
+        &lt;img src="path_to_your_image" alt="IMG"&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="_PR83">
+        <div class="_X318PXE">
+            <div>
+                <a href="/">
+                    <h2 class="__FP44">Z3</h2>
+                </a>
+                <p class="_x">&copy; 2020 Nithin &plus; Open Source</p>
+            </div>
+        </div>
+    </footer>
+    <script data-id="echo-build">
+        /** < [APP BUILD AUTO GENERATED] >
+         **  ECHO v1 .4 .3~TP8 
+         **/
+        (function() {
+            var q, a, g, r, p, l;
+            q = document.createElement("echo-app");
+            q.setAttribute("author", "Nithin"),
+                a = "bdd69c5740c473253e27ad4ae7c25c559144e841",
+                q.setAttribute("app", "Z3"),
+                q.setAttribute("version", "1.0.0"),
+                q.setAttribute("build", "stable"),
+                q.setAttribute("last-modified", "/?"),
+                q.setAttribute("key", a);
+            document.body.appendChild(q);
+        }).call(this);
+    </script>
+</body>
+
+</html>
